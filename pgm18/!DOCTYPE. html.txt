@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Background Changer</title>
+</head>
+<body style="margin: 0; padding: 0; min-height: 100vh; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; background-color: white; background-size: cover; background-position: center; transition: background 0.3s ease;">
+
+  <div style="background-color: rgba(255, 255, 255, 0.85); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); text-align: center;">
+    <h2 style="margin-top: 0; color: #333; margin-bottom: 20px;">Background Changer</h2>
+    
+    <button onclick="changeColor()" style="background-color: #007bff; color: white; border: none; padding: 12px 20px; font-size: 14px; border-radius: 6px; cursor: pointer; margin: 5px; transition: background-color 0.2s;">
+      Change Color
+    </button>
+    
+    <button onclick="changeBackgroundImage()" style="background-color: #28a745; color: white; border: none; padding: 12px 20px; font-size: 14px; border-radius: 6px; cursor: pointer; margin: 5px; transition: background-color 0.2s;">
+      Change Background Image
+    </button>
+    
+    <button onclick="resetBackground()" style="background-color: #6c757d; color: white; border: none; padding: 12px 20px; font-size: 14px; border-radius: 6px; cursor: pointer; margin: 5px; transition: background-color 0.2s;">
+      Resume to Normal
+    </button>
+  </div>
+
+  <script>
+    const originalColor = "white";
+    const originalImage = "";
+
+    function changeColor(){
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundColor = "blue";
+    }
+
+    function changeBackgroundImage(){
+      // Using a valid image URL with proper closing single quote
+      document.body.style.backgroundImage = "url('https://picsum.photos/1200/800')";
+      document.body.style.backgroundColor = "";
+    }
+
+    function resetBackground(){
+      document.body.style.backgroundColor = originalColor;
+      document.body.style.backgroundImage = originalImage;
+    }
+  </script>
+</body>
+</html>
